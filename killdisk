@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+while :
+do
+lsblk -l -o name -d | grep sd > balls
+while IFS= read -r line; do
+wipefs -faq /dev/$line
+echo "$line wiped"
+
+done < balls
+rm -rf balls
+echo "pull the drive now"
+sleep 10
+echo "running wipe"
+sleep 1
+done
+

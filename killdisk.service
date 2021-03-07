@@ -1,0 +1,9 @@
+[Unit]
+Description=killdisks
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/killdisk
+
+[Install]
+WantedBy=multi-user.target
